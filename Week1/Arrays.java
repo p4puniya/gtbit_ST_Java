@@ -1,3 +1,4 @@
+package Week1;
 class Arrays{
     // int size=10;
     public static void displayArray(int[] aditya){
