@@ -1,5 +1,5 @@
 package Week1;
-class Arrays{
+class Array{
     // int size=10;
     public static void displayArray(int[] aditya){
         //code for displaying my array.
