@@ -5,7 +5,7 @@ public class Students {
     String s= "";
     int semester= 0;
     int year= 0;
-    int branch_code= -1;
+    private int branch_code= -1;
     Branch branch= new Branch();
     public Students(){}
     public Students(
@@ -20,6 +20,24 @@ public class Students {
         this.semester= sem;
         this.year= year;
         this.branch_code= branch;
+    }
+    public Students(
+        String name,
+        int year,
+        int sem
+    ){
+        this.s=name;
+        this.semester= sem;
+        this.year= year;
+    }
+    
+
+    //getters and setter
+    int getBranchCode(){
+        return this.branch_code;
+    }
+    void setBranchCode(int code){
+        this.branch_code=code;
     }
     //default constructor
     /*

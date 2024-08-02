@@ -6,10 +6,10 @@ public class Class2 {
         System.out.println(s.roll);
         System.out.println(s.semester);
         System.out.println(s.year);
-        if(s.branch_code<0 && s.branch_code<4)
+        if(s.getBranchCode()<0 || s.getBranchCode()>=4)
             System.out.println("No branch Assigned");
         else
-            System.out.println(s.branch.branches[s.branch_code]);        
+            System.out.println(s.branch.branches[s.getBranchCode()]);        
     }
     public static void main(String[] args) {
         Students s1= new Students();
@@ -20,6 +20,13 @@ public class Class2 {
             2,
             3
         );
-        display(utkarsh);
+        utkarsh.setBranchCode(0);
+        Students naman= new Students(
+            "Naman",
+            1,
+            1
+        );
+        // utkarsh.branch_code=0;
+        display(naman);
     }
 }
