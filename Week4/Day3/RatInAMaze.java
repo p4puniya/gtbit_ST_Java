@@ -41,20 +41,14 @@ public class RatInAMaze {
 
         // Check if the current cell is valid
         if (i >= 0 && i < n && j >= 0 && j < m && maze[i][j] != 'X' && sol[i][j] == 0) {
-            sol[i][j] = 1; // assumption
+            sol[i][j] = 1; // mark as part of the path
             currentPathLength++;
 
-            // move right
-            RIAM(maze, i, j + 1, n, m);
-            
-            // move down
-            RIAM(maze, i + 1, j, n, m);
-            
-            // move left
-            RIAM(maze, i, j - 1, n, m);
-            
-            // move up
-            RIAM(maze, i - 1, j, n, m);
+            // Explore all four directions
+            RIAM(maze, i, j + 1, n, m); // right
+            RIAM(maze, i + 1, j, n, m); // down
+            RIAM(maze, i, j - 1, n, m); // left
+            RIAM(maze, i - 1, j, n, m); // up
 
             // backtracking
             sol[i][j] = 0;
@@ -70,10 +64,11 @@ public class RatInAMaze {
             {'0', 'X', 'X', 'X', '0'},
             {'0', 'X', '0', '0', '0'},
             {'0', 'X', '0', 'X', 'X'},
-            {'0', '0', '0', '0', '0'}
+            {'0', 'X', '0', '0', '0'}
         };
 
-        RIAM(maze, 1, 1, 5, 5);
+        // Start from (0, 0) instead of (1, 1) to match the maze layout.
+        RIAM(maze, 0, 0, 5, 5);
         display(shortestPath, 5, 5);
     }
 }
