@@ -12,6 +12,7 @@ public class Implementation {
         System.out.println();
         bt.postOrder(bt.root);
         System.out.println();
+        bt.levelOrderTraversal();
         // System.out.println(bt.findMax(bt.root));
         // System.out.println(bt.findElement(bt.root, 4));
     }

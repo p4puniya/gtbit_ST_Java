@@ -1,4 +1,6 @@
 package Week7;
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Scanner;
 public class BinaryTrees {
     class Node{
@@ -81,7 +83,7 @@ public class BinaryTrees {
 
         return 1+Math.max(leftTree, rightTree);
     }
-
+//DFS
     public void inOrder(Node nn){
         if(nn==null) return;
 
@@ -102,5 +104,20 @@ public class BinaryTrees {
         postOrder(nn.left);
         postOrder(nn.right);
         System.out.print(nn.val+" ");
+    }
+
+//BFS
+    public void levelOrderTraversal(){
+        Queue<Node> q= new LinkedList<>();
+        q.add(root);
+        while(!q.isEmpty()){
+            Node rv= q.remove();
+            System.out.print(rv.val+" ");
+            if(rv.left!=null)
+                q.add(rv.left);
+            if(rv.right!=null)
+                q.add(rv.right);
+        }
+        System.out.println();
     }
 }
